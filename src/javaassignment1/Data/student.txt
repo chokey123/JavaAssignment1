@@ -1,0 +1,4 @@
+TP0002,Rayes,Male,19,off campus,
+124,Zhi Rong,Male,20,Not Living in Hostel,
+125,Yi Xing,Male,20,Not Living in Hostel,
+126,lycheePie,Female,21,off campus,

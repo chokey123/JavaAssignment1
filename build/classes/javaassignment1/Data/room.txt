@@ -1,0 +1,5 @@
+A01,Male,STD,2,true,
+A02,Male,STD,2,true,
+A03,Male,DEL,1,false,
+A04,Female,DEL,1,false,
+A05,Female,DEL,1,true,
