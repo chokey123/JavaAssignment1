@@ -112,7 +112,7 @@ public class Login extends javax.swing.JFrame {
         role = obj1.Login(usertxt, jTextField1.getText(), jPasswordField1.getText());
         
         if (role.equals("student")){
-            Student std = new Student();
+            Student std = new Student(jTextField1.getText());
             std.viewMenu();
         }
         else if (role.equals("admin")){
