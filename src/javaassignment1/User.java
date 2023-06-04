@@ -10,10 +10,15 @@ import java.util.ArrayList;
  *
  * @author User
  */
-public class User {
+public class User implements viewMenuable {
     private String username;
     private String password;
     private String role;
+    
+     public void viewMenu(){
+        GuestMenu window = new GuestMenu();
+        window.setVisible(true);
+    }
 
     public String getUsername() {
         return username;
@@ -40,7 +45,9 @@ public class User {
     }
 
     public User(){
-        
+        username = "";
+        password = "";
+        role = "";
     }
     
     public User(String username, String password) {
@@ -48,10 +55,7 @@ public class User {
         this.password = password;
     }
     
-    public void viewMenu(){
-        GuestMenu window = new GuestMenu();
-        window.setVisible(true);
-    }
+   
     
     public String Login(ArrayList<ArrayList<String>> lst, String un, String ps){
         String role = "";

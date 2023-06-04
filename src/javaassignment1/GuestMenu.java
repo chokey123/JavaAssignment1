@@ -42,7 +42,7 @@ public class GuestMenu extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("View Availablle Room");
+        jButton2.setText("View Available Room");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

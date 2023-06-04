@@ -11,7 +11,7 @@ import java.util.Collections;
  *
  * @author User
  */
-public class Room implements ManageStudentData {
+public class Room extends ManageStudentData {
     private String roomNum;
     private String gender;
     private String type;
@@ -55,9 +55,7 @@ public class Room implements ManageStudentData {
         return roomNum;
     }
 
-    public void setRoomNum(String roomNum) {
-        this.roomNum = roomNum;
-    }
+   
 
     public String getGender() {
         return gender;
@@ -79,19 +77,13 @@ public class Room implements ManageStudentData {
         return capacity;
     }
 
-    public void setCapacity(String capacity) {
-        this.capacity = capacity;
-    }
-
+    
     public String getAvailability() {
         return availability;
     }
-
-    public void setAvailability(String availability) {
-        this.availability = availability;
-    }
     
     // get all the room ids of room.txt
+    
     @Override
     public ArrayList<String> viewID(){
         ArrayList<String> roomNumS = new ArrayList<>();
@@ -228,6 +220,7 @@ public class Room implements ManageStudentData {
     }
     
     //get all data from student_rooms
+    @Override
     public ArrayList<ArrayList<String>> getStudentData(){
         ArrayList<ArrayList<String>> lst = file.readFile("student_rooms.txt");
         return lst;

@@ -10,8 +10,7 @@ import java.util.ArrayList;
  *
  * @author User
  */
-public class Payment implements ManageStudentData{
-
+public class Payment extends ManageStudentData{
     protected String id;
     protected String studId;
     protected double amount;
@@ -82,13 +81,16 @@ public class Payment implements ManageStudentData{
         return studentData;
     } 
     
+   
+    
     public double getUnpaidFees(){
         double fees = 0;
         //ArrayList<ArrayList<String>> studentData = getStudentData();
         //System.out.println("ArrayList inside getUnpaidFees \n"+studentData);
         for(int i = 0; i < this.data.size(); i ++){
             if(this.studId.equals(this.data.get(i).get(1)) && this.data.get(i).get(4).equals("unpaid")){
-                return Double.parseDouble(this.data.get(i).get(2));
+                double fee =  Double.parseDouble(this.data.get(i).get(2));
+                fees += fee;
             }
         }
         

@@ -72,7 +72,7 @@ public class studentApplication extends javax.swing.JFrame {
 
         jLabel4.setText("Status: ");
 
-        jButton1.setText("confirm");
+        jButton1.setText("back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -160,7 +160,7 @@ public class studentApplication extends javax.swing.JFrame {
     
     private void addApplList(ArrayList<ArrayList<String>> list){
       jList1.setModel(listModel);
-
+      
       for (int i = 0; i < list.size(); i++){
             listModel.addElement(list.get(i).get(0));
         }
@@ -178,6 +178,7 @@ public class studentApplication extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
