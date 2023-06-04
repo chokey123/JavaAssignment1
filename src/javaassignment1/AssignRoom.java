@@ -50,12 +50,11 @@ public class AssignRoom extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jButton3 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(480, 150));
+        setUndecorated(true);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -185,21 +184,6 @@ public class AssignRoom extends javax.swing.JFrame {
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, 131));
-
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaassignment1/images/pages background.png"))); // NOI18N
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -295,7 +279,18 @@ public class AssignRoom extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         Room rm = new Room();
-        rm.evictStudent(jTextField2.getText());
+        try{
+            rm.evictStudent(jTextField2.getText());
+            JOptionPane.showMessageDialog(null,"All Files have been updated");
+        }
+        catch(HeadlessException e){
+            JOptionPane.showMessageDialog(null,"Something went wrong");
+        }
+        jTextField2.setText("");
+        jTextField2.setEditable(true);
+        jTextField2.setForeground(Color.black);
+        jTextField2.setBackground(Color.white);
+        jButton6.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -431,9 +426,7 @@ public class AssignRoom extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables

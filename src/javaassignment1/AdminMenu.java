@@ -5,6 +5,7 @@
 package javaassignment1;
 
 import java.awt.Color;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -162,7 +163,20 @@ public class AdminMenu extends javax.swing.JFrame {
 
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
         // TODO add your handling code here:
+       jButton1.setForeground(new JButton().getForeground());
+       jButton1.setBackground(new JButton().getBackground());
        
+       jButton2.setForeground(new JButton().getForeground());
+       jButton2.setBackground(new JButton().getBackground());
+       
+       jButton3.setForeground(new JButton().getForeground());
+       jButton3.setBackground(new JButton().getBackground());
+       
+       jButton4.setForeground(new JButton().getForeground());
+       jButton4.setBackground(new JButton().getBackground());
+       
+       jButton5.setForeground(new JButton().getForeground());
+       jButton5.setBackground(new JButton().getBackground());
     }//GEN-LAST:event_formWindowGainedFocus
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -182,23 +196,29 @@ public class AdminMenu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        jButton1.setForeground(Color.red);
-        jButton1.setBackground(new Color(255,255,255));
+        jButton2.setForeground(Color.red);
+        jButton2.setBackground(new Color(255,255,255));
         new ManageApplication().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        jButton5.setForeground(Color.red);
+        jButton5.setBackground(new Color(255,255,255));
         new AssignRoom().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        jButton3.setForeground(Color.red);
+        jButton3.setBackground(new Color(255,255,255));
         new StudentRecords().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        jButton4.setForeground(Color.red);
+        jButton4.setBackground(new Color(255,255,255));
         new Report().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 

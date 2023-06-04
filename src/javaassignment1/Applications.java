@@ -36,14 +36,10 @@ public class Applications implements ManageStudentData {
                 this.applicationDate = applications.get(i).get(3);
                 this.status = applications.get(i).get(4);
                 this.type = applications.get(i).get(2);
-                System.out.println(this.type);
-                //room.setType(applications.get(i).get(2));// is not setting the type
-                //System.out.println(applications.get(i).get(2));
             }
         }
     }
 
-     // prob should get rid of this but for now idk how to load it into the super class
     public String getType() {
         return type;
     }
@@ -165,37 +161,5 @@ public class Applications implements ManageStudentData {
     public String getFilename() {
         return filename;
     }
-    
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(AssignRoom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(AssignRoom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(AssignRoom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(AssignRoom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Applications("123"). deleteApplication();
-//            }
-//        });
-//    }
-    
+  
 }

@@ -98,11 +98,11 @@ public class Student extends User {
         ArrayList<ArrayList<String>> lst = file.readFile("student.txt");
         for (int i = 0; i<lst.size(); i++){
             if (this.studentID.equals(lst.get(i).get(0))){
-                if (lst.get(i).get(4).equals("off campus")){
+                if (lst.get(i).get(4).equals("Not Living in Hostel")){
                     lst.get(i).set(4,"hostel");
                 }
                 else
-                    lst.get(i).set(4,"off campus");
+                    lst.get(i).set(4,"Not Living in Hostel");
             }
         }
         file.writeData("student.txt", lst);

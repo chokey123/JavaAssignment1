@@ -228,6 +228,7 @@ public class Room implements ManageStudentData {
     }
     
     //get all data from student_rooms
+    @Override
     public ArrayList<ArrayList<String>> getStudentData(){
         ArrayList<ArrayList<String>> lst = file.readFile("student_rooms.txt");
         return lst;
@@ -253,33 +254,32 @@ public class Room implements ManageStudentData {
         return 0;
     }
     
-    public void evictStudent(String studID){ //incomplete
-        
-        // block to erase the line in student_rooms
+    public void evictStudent(String studID){      
         Student std1 = new Student(studID);
         Applications app1 = new Applications(studID);
         ArrayList<ArrayList<String>> lst = file.readFile("student_rooms.txt");
+        System.out.println(lst);
+        
+        // block to erase the line in student_rooms
         try{
             for (int i = 0; i<lst.size(); i++){
-                System.out.println(studID + lst.get(i).get(1));
                 if (studID.equals(lst.get(i).get(1))){
                     lst.remove(i);
                     System.out.println(lst);
-                    file.writeData("student_rooms.txt", lst);
-                    this.roomNum = lst.get(i).get(0);
-                    updateRoomStatus();
                 }
             }
-            //return "Room successfully deleted";
+            System.out.println(lst);
+            file.writeData("student_rooms.txt", lst);
+           
         }
         catch(Exception e){
-        
+            
         }
-        // block to change the student's the staying area
-        std1.updateSudentStatus();
+       // block to change the student's the staying area
+       std1.updateSudentStatus();
         
-        //block to maybe delete the accepted application
-       new Applications(studID).deleteApplication();
+       //block to maybe delete the accepted application
+       app1.deleteApplication();
     }
     
     public int availableRooms(){
