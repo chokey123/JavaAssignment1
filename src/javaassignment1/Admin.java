@@ -8,7 +8,7 @@ package javaassignment1;
  *
  * @author User
  */
-public class Admin extends User {
+public class Admin extends User implements viewMenuable {
     @Override
     public void viewMenu(){
         AdminMenu window = new AdminMenu();

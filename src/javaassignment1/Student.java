@@ -10,7 +10,14 @@ import java.util.ArrayList;
  *
  * @author User
  */
-public class Student extends User { 
+public class Student extends User implements viewMenuable { 
+    
+     @Override
+    public void viewMenu(){
+        studentMenu window = new studentMenu(studentID);
+        window.setVisible(true);
+    }
+    
     private String studentID;
     private String name;
     private String gender;
@@ -47,15 +54,6 @@ public class Student extends User {
         this.studentID = studentID;
         
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     
     public String getGender() {
         return gender;
@@ -66,22 +64,8 @@ public class Student extends User {
         this.gender = gender;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getResidence() {
-        return residence;
-    }
-
-    public void setResidence(String residence) {
-        this.residence = residence;
-    }
-    
+   
+   
     // get all the names of the students
     public ArrayList<String> viewStudentsName(){
         ArrayList<String> students = new ArrayList<>();
@@ -125,9 +109,5 @@ public class Student extends User {
         return profile;
     }
     
-    @Override
-    public void viewMenu(){
-        studentMenu window = new studentMenu(studentID);
-        window.setVisible(true);
-    }
+   
 }

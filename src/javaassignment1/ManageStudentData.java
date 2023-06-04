@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author User
  */
-interface ManageStudentData {
-    public ArrayList<String> viewID();
-    public ArrayList<ArrayList<String>> getStudentData();
+abstract class ManageStudentData {
+    public abstract ArrayList<String> viewID();
+    public abstract ArrayList<ArrayList<String>> getStudentData();
 }

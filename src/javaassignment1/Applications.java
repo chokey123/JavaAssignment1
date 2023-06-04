@@ -10,11 +10,37 @@ import java.util.ArrayList;
  *
  * @author User
  */
-public class Applications implements ManageStudentData {
+public class Applications extends ManageStudentData {
 
+    @Override
+    public ArrayList<String> viewID(){
+        ArrayList<String> appIDs = new ArrayList<>();
+        ArrayList<ArrayList<String>> lst = file.readFile("application.txt");
+        for (int i=0; i<lst.size(); i++){
+            appIDs.add(lst.get(i).get(0));
+        }
+        return appIDs;
+    }
     
-    private String studId;
+     @Override
+    public ArrayList<ArrayList<String>> getStudentData(){
+        ArrayList<ArrayList<String>> application = new ArrayList();
+        
+        for (int i = 0; i<data.size(); i++){
+            System.out.println(data.get(i).get(1).equals(getStudId()));
+            System.out.println(data.get(i).get(1));
+            System.out.println(getStudId());
+            if (data.get(i).get(1).equals(getStudId())){
+                application.add(data.get(i));
+            }
+        }
+        
+        System.out.println(application);
+        return application;
+    }
+    
     private String applicationID;
+    private String studId;
     private String applicationDate;
     private String type;
     private String status;
@@ -69,16 +95,6 @@ public class Applications implements ManageStudentData {
     }
 
     
-    public String getApplicationDate() {
-        return applicationDate;
-    }
-
-    
-    public void setApplicationDate(String applicationDate) {
-        this.applicationDate = applicationDate;
-    }
-
-    
     public void setType(String type) {
         this.type = type;
     }
@@ -87,15 +103,7 @@ public class Applications implements ManageStudentData {
     public void setStatus(String status) {
         this.status = status;
     }
-    @Override
-    public ArrayList<String> viewID(){
-        ArrayList<String> appIDs = new ArrayList<>();
-        ArrayList<ArrayList<String>> lst = file.readFile("application.txt");
-        for (int i=0; i<lst.size(); i++){
-            appIDs.add(lst.get(i).get(0));
-        }
-        return appIDs;
-    }
+    
  
     //get all Student ID in application.txt
     public  ArrayList<String> viewApplicationsStudentID(){
@@ -134,19 +142,7 @@ public class Applications implements ManageStudentData {
         catch(Exception e){}
     }
     
-    @Override
-    public ArrayList<ArrayList<String>> getStudentData(){
-        ArrayList<ArrayList<String>> application = new ArrayList();
-        
-        for (int i = 0; i<data.size(); i++){
-            if (data.get(i).get(1).equals(getStudId())){
-                application.add(data.get(i));
-            }
-        }
-        
-        System.out.println(application);
-        return application;
-    }
+   
     
     public String generateApplicationId(){
         String newId;
